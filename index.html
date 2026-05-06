@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CYENS Careers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 20, 45, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 18px 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      transition: 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .menu a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(6, 15, 45, 0.82), rgba(6, 15, 45, 0.82)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop') center/cover;
+      color: white;
+      padding-top: 100px;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.15rem;
+      margin: 25px 0 35px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 10px 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 30px;
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 15px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #00B4D8;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0096c7;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: auto auto 60px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin: 15px 0;
+      font-size: 1.3rem;
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: #e9f9fc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .highlight {
+      background: #f8fbfd;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .bullet-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .bullet {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .bullet span {
+      color: #00B4D8;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .stat-box {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .stat-box h3 {
+      font-size: 2rem;
+      color: #00B4D8;
+      margin-bottom: 10px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .step {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      border-top: 4px solid #00B4D8;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .step-number {
+      width: 45px;
+      height: 45px;
+      margin: auto auto 15px;
+      border-radius: 50%;
+      background: #00B4D8;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #06142D, #0B2545);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.8);
+      max-width: 700px;
+      margin: 20px auto 35px;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      background: #06142D;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.6rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .btn-group {
+        justify-content: center;
+      }
+
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">CYENS Careers</a>
+
+      <div class="menu">
+        <a href="#careers-hub">Careers</a>
+        <a href="#marketing-role">Marketing Officer Role</a>
+        <a href="#training-role">Training Administrator Role</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CAREERS HUB -->
+  <section class="hero" id="careers-hub">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="tag">
+          CYENS Centre of Excellence · Careers
+        </div>
+
+        <h1>
+          Build the Future Through Innovation, Research & Creativity
+        </h1>
+
+        <p>
+          Explore opportunities at CYENS and become part of a multidisciplinary environment where technology, research, communication, and innovation come together to create meaningful impact.
+        </p>
+
+        <div class="btn-group">
+          <a href="#open-roles" class="btn btn-primary">Explore Opportunities</a>
+          <a href="#why-cyens" class="btn btn-secondary">Why CYENS</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="why-cyens">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why Join CYENS</h2>
+        <p>
+          A modern environment combining research excellence, technology, creativity, and international collaboration.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🚀</div>
+          <h3>Innovation Culture</h3>
+          <p>
+            Work in an organisation focused on emerging technologies and impactful innovation.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌍</div>
+          <h3>Global Partnerships</h3>
+          <p>
+            Collaborate with leading universities, researchers, and international partners.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💡</div>
+          <h3>Meaningful Work</h3>
+          <p>
+            Contribute to projects shaping the future of research, communication, and innovation.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="highlight" id="open-roles">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Current Opportunities</h2>
+        <p>
+          Explore available opportunities and grow your career within a dynamic Centre of Excellence.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon"></div>
+          <h3>Marketing & Communications Officer</h3>
+          <br>
+
+          <a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2625871#apply" target="_blank" class="btn btn-primary">
+            Apply Now
+          </a>
+        </div>
+
+      </div>
+
+        <div class="card">
+          <div class="icon"></div>
+          <h3>Training Administrator</h3>
+          <br>
+
+          <a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2622932#apply" target="_blank" class="btn btn-primary">
+            Apply Now
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ROLE TEMPLATE -->
+  <section class="hero" id="marketing-role">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="tag">
+          Marketing & Communications Officer · Nicosia, Cyprus
+        </div>
+
+        <h1>
+          Start Your Marketing Career at CYENS
+        </h1>
+
+        <p>
+          Join a multidisciplinary Centre of Excellence shaping innovation, research, and emerging technologies through impactful communication, digital engagement, and creative storytelling.
+        </p>
+
+        <div class="btn-group">
+          <a href="#apply" class="btn btn-primary">Apply Now</a>
+          <a href="#role-details" class="btn btn-secondary">Explore the Role</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why This Role</h2>
+        <p>
+          Build practical experience in digital marketing, communication, content creation, and innovation.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Digital Marketing</h3>
+          <p>
+            Work on social media campaigns, digital engagement, and communication initiatives.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎥</div>
+          <h3>Creative Content</h3>
+          <p>
+            Create engaging visual and written content supporting the CYENS brand.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>Professional Growth</h3>
+          <p>
+            Gain valuable experience in a fast-growing research and innovation environment.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="highlight" id="role-details">
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+          <h2>
+            A Role Built for Curious and Creative Minds
+          </h2>
+
+          <p>
+            As a Marketing & Communications Officer at CYENS, you will contribute to the digital presence and communication strategy of a leading research and innovation organisation.
+          </p>
+
+          <div class="bullet-list">
+
+            <div class="bullet">
+              <span>✓</span>
+              <p>Create engaging digital content and campaigns</p>
+            </div>
+
+            <div class="bullet">
+              <span>✓</span>
+              <p>Work with multidisciplinary teams across innovation and research projects</p>
+            </div>
+
+            <div class="bullet">
+              <span>✓</span>
+              <p>Support social media, website, newsletters, and communication initiatives</p>
+            </div>
+
+            <div class="bullet">
+              <span>✓</span>
+              <p>Develop practical experience in analytics, branding, and audience engagement</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <img 
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+            alt="Team collaboration"
+            style="width:100%; border-radius:24px; box-shadow:0 15px 40px rgba(0,0,0,0.1);"
+          >
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESPONSIBILITIES -->
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>What You'll Do</h2>
+        <p>
+          Contribute to marketing initiatives that strengthen visibility, engagement, and communication across digital platforms.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Website Management</h3>
+          <p>
+            Update and maintain the CYENS website using WordPress and support digital content updates.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Social Media</h3>
+          <p>
+            Create, schedule, and publish engaging social media content across digital channels.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📩</div>
+          <h3>Email Campaigns</h3>
+          <p>
+            Support newsletter campaigns and communication activities through email marketing tools.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💰</div>
+          <h3>Paid Campaigns</h3>
+          <p>
+            Support paid digital campaigns and audience targeting initiatives across online platforms.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Analytics & Insights</h3>
+          <p>
+            Monitor performance metrics, analyse engagement, and prepare KPI reports.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎥</div>
+          <h3>Content Creation</h3>
+          <p>
+            Assist with video editing, photography, visual content, and digital storytelling.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📰</div>
+          <h3>Media Communication</h3>
+          <p>
+            Draft and distribute press releases promoting initiatives, events, and achievements.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IDEAL CANDIDATE -->
+  <section class="highlight">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Who You Are</h2>
+        <p>
+          We are looking for someone creative, motivated, collaborative, and eager to grow in a research and innovation environment.
+        </p>
+      </div>
+
+      <div class="split">
+
+        <div class="card">
+          <h3>Skills & Knowledge</h3>
+
+          <div class="bullet-list">
+            <div class="bullet"><span>✓</span><p>Digital marketing & social media</p></div>
+            <div class="bullet"><span>✓</span><p>Content creation & communication</p></div>
+            <div class="bullet"><span>✓</span><p>WordPress and digital tools</p></div>
+            <div class="bullet"><span>✓</span><p>Strong written English</p></div>
+            <div class="bullet"><span>✓</span><p>Analytical thinking & organisation</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Mindset & Personality</h3>
+
+          <div class="bullet-list">
+            <div class="bullet"><span>✓</span><p>Creative and innovative thinker</p></div>
+            <div class="bullet"><span>✓</span><p>Curious and willing to learn</p></div>
+            <div class="bullet"><span>✓</span><p>Collaborative team player</p></div>
+            <div class="bullet"><span>✓</span><p>Self-motivated and proactive</p></div>
+            <div class="bullet"><span>✓</span><p>Comfortable in multidisciplinary environments</p></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why You'll Love It Here</h2>
+        <p>
+          Be part of an organisation combining research excellence, technology, creativity, and innovation.
+        </p>
+      </div>
+
+      <div class="stats">
+
+        <div class="stat-box">
+          <h3>18</h3>
+          <p>Multidisciplinary Research Teams</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>EU</h3>
+          <p>Funded Innovation & Research Projects</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>1 Year</h3>
+          <p>Initial Contract with Renewal Possibility</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>Growth</h3>
+          <p>Hands-On Learning & Professional Development</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Application Process</h2>
+        <p>
+          A simple and transparent recruitment experience.
+        </p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Apply Online</h3>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Application Review</h3>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Interviews</h3>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Final Selection</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta" id="apply">
+
+    <div class="container">
+
+      <h2>
+        Ready to Create Impact Through Marketing and Innovation?
+      </h2>
+
+      <p>
+        Join CYENS and contribute to meaningful projects that combine technology, creativity, research, and communication.
+      </p>
+
+      <div class="btn-group" style="justify-content:center; margin-top:20px;">
+        <a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2625871#apply" target="_blank" class="btn btn-primary">
+          Apply Today
+        </a>
+
+        <a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2625871" target="_blank" class="btn btn-secondary">
+          Job Description
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TRAINING ADMINISTRATOR ROLE -->
+  <section class="hero" id="training-role">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="tag">
+          Training Administrator · Nicosia, Cyprus
+        </div>
+
+        <h1>
+          Support Learning & Training Excellence at CYENS
+        </h1>
+
+        <p>
+          Join CYENS and contribute to the smooth delivery of training programmes, education initiatives, and HRDA-approved learning activities within a dynamic research and innovation environment.
+        </p>
+
+        <div class="btn-group">
+          <a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2622932#apply" target="_blank" class="btn btn-primary">Apply Now</a>
+          <a href="#training-details" class="btn btn-secondary">Explore the Role</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why This Role</h2>
+        <p>
+          Build valuable experience in training administration, coordination, compliance procedures, and educational programme support.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">📚</div>
+          <h3>Training Coordination</h3>
+          <p>
+            Support the delivery and organisation of HRDA-approved training programmes and educational activities.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🗂️</div>
+          <h3>Structured Administration</h3>
+          <p>
+            Manage documentation, records, registrations, and compliance procedures with attention to detail.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>Professional Growth</h3>
+          <p>
+            Gain hands-on experience within a multidisciplinary Centre of Excellence focused on innovation and education.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="highlight" id="training-details">
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+          <h2>
+            A Role Designed for Organised and Detail-Oriented Professionals
+          </h2>
+
+          <p>
+            As a Training Administrator at CYENS, you will support the administration and coordination of education and training activities, ensuring procedures, records, and HRDA requirements are managed accurately and efficiently.
+          </p>
+
+          <div class="bullet-list">
+
+            <div class="bullet">
+              <span>✓</span>
+              <p>Coordinate HRDA-approved training programmes and documentation</p>
+            </div>
+
+            <div class="bullet">
+              <span>✓</span>
+              <p>Support participant registrations, attendance records, and training files</p>
+            </div>
+
+            <div class="bullet">
+              <span>✓</span>
+              <p>Ensure compliance with HRDA procedures and deadlines</p>
+            </div>
+
+            <div class="bullet">
+              <span>✓</span>
+              <p>Provide administrative support for education and training initiatives</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <img 
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
+            alt="Training administration"
+            style="width:100%; border-radius:24px; box-shadow:0 15px 40px rgba(0,0,0,0.1);"
+          >
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>What You'll Do</h2>
+        <p>
+          Support the smooth administrative delivery of training programmes and educational activities.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">📝</div>
+          <h3>HRDA Documentation</h3>
+          <p>
+            Prepare, submit, and maintain HRDA documentation before, during, and after programme delivery.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">👥</div>
+          <h3>Participant Coordination</h3>
+          <p>
+            Coordinate registrations, attendance records, communication, and training files.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📢</div>
+          <h3>Training Promotion</h3>
+          <p>
+            Support the dissemination and promotion of training opportunities to target audiences.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">✅</div>
+          <h3>Compliance Procedures</h3>
+          <p>
+            Ensure compliance with HRDA procedures, deadlines, and administrative requirements.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h3>Stakeholder Communication</h3>
+          <p>
+            Liaise with trainers, participants, and internal and external stakeholders.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📂</div>
+          <h3>Training Records</h3>
+          <p>
+            Maintain accurate, organised, and well-structured training administration records.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Who You Are</h2>
+        <p>
+          We are looking for someone organised, reliable, detail-oriented, and comfortable working within structured administrative procedures.
+        </p>
+      </div>
+
+      <div class="split">
+
+        <div class="card">
+          <h3>Skills & Knowledge</h3>
+
+          <div class="bullet-list">
+            <div class="bullet"><span>✓</span><p>Training administration experience</p></div>
+            <div class="bullet"><span>✓</span><p>Strong organisation & time management</p></div>
+            <div class="bullet"><span>✓</span><p>MS Office & administrative systems</p></div>
+            <div class="bullet"><span>✓</span><p>Excellent Greek & English communication</p></div>
+            <div class="bullet"><span>✓</span><p>Attention to detail & structured processes</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Mindset & Personality</h3>
+
+          <div class="bullet-list">
+            <div class="bullet"><span>✓</span><p>Methodical and compliance-oriented</p></div>
+            <div class="bullet"><span>✓</span><p>Reliable and professional</p></div>
+            <div class="bullet"><span>✓</span><p>Independent and organised</p></div>
+            <div class="bullet"><span>✓</span><p>Collaborative team player</p></div>
+            <div class="bullet"><span>✓</span><p>Comfortable with process-driven work</p></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why You'll Love It Here</h2>
+        <p>
+          Be part of a Centre of Excellence supporting innovation, education, and professional development.
+        </p>
+      </div>
+
+      <div class="stats">
+
+        <div class="stat-box">
+          <h3>18</h3>
+          <p>Multidisciplinary Research Teams</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>HRDA</h3>
+          <p>Training & Educational Programme Support</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>1 Year</h3>
+          <p>Initial Contract with Renewal Possibility</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>€14K–18K</h3>
+          <p>Salary Based on Qualifications, Experience & Role Suitability</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Application Process</h2>
+        <p>
+          A simple and transparent recruitment experience.
+        </p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Apply Online</h3>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Application Review</h3>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Interviews</h3>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Final Selection</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta" id="training-apply">
+
+    <div class="container">
+
+      <h2>
+        Ready to Support Learning & Training Excellence?
+      </h2>
+
+      <p>
+        Join CYENS and contribute to impactful education and training initiatives within an innovative research environment.
+      </p>
+
+      <div class="btn-group" style="justify-content:center; margin-top:20px;">
+        <a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2622932#apply" target="_blank" class="btn btn-primary">
+          Apply Today
+        </a>
+
+        <a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2622932" target="_blank" class="btn btn-secondary">
+          Job Description
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>
+          For general enquiries regarding careers and opportunities at CYENS, feel free to contact our HR team.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">📧</div>
+          <h3>Email</h3>
+          <p>
+            vacancies@cyens.org.cy
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Website</h3>
+          <p>
+            www.cyens.org.cy
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Location</h3>
+          <p>
+            Nicosia, Cyprus
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 CYENS Careers · Landing Page System
+  </footer>
+
+</body>
+</html>
