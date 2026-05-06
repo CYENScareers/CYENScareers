@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Administrator | CYENS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif;margin:0;background:#fff;color:#1a1a1a}.container{width:90%;max-width:1200px;margin:auto}section{padding:90px 0}.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(6,15,45,.82),rgba(6,15,45,.82)),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop') center/cover;color:#fff}h1{font-size:4rem}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}.card{background:#fff;padding:35px;border-radius:20px;box-shadow:0 10px 35px rgba(0,0,0,.06)}.btn{padding:15px 28px;border-radius:12px;text-decoration:none;font-weight:600;display:inline-block}.btn-primary{background:#00B4D8;color:#fff}.highlight{background:#f8fbfd}nav{position:fixed;width:100%;top:0;background:rgba(6,20,45,.95);padding:18px 0}footer{padding:30px 0;text-align:center;background:#06142D;color:#fff}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<a href="index.html" style="color:white;text-decoration:none;font-weight:700;">← Back to Careers</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<h1>Support Learning & Training Excellence at CYENS</h1>
+<p>Join CYENS and contribute to the smooth delivery of training programmes, education initiatives, and HRDA-approved learning activities.</p>
+<a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2622932#apply" target="_blank" class="btn btn-primary">Apply Today</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>What You'll Do</h2>
+<div class="cards">
+<div class="card"><h3>HRDA Documentation</h3></div>
+<div class="card"><h3>Participant Coordination</h3></div>
+<div class="card"><h3>Training Promotion</h3></div>
+<div class="card"><h3>Compliance Procedures</h3></div>
+<div class="card"><h3>Stakeholder Communication</h3></div>
+<div class="card"><h3>Training Records</h3></div>
+</div>
+</div>
+</section>
+
+<section class="highlight">
+<div class="container">
+<h2>Salary Range</h2>
+<p>€14,000 – €18,000 based on qualifications, experience, and suitability for the role.</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Contact Us</h2>
+<p>vacancies@cyens.org.cy</p>
+<br>
+<a href="https://cyens-centre-of-excellence.jobs.personio.com/job/2622932" target="_blank" class="btn btn-primary">Job Description</a>
+</div>
+</section>
+
+<footer>© 2026 CYENS Careers</footer>
+</body>
+</html>
